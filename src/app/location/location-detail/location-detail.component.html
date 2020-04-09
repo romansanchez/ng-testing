@@ -1,7 +1,7 @@
 <h1>Location Detail Component</h1>
 <label for="id">id:</label>
-<input id="location-detail-id" type="text" [(ngModel)]="id" placeholder="id"/>
-<button id="location-detail-btn" (click)="lookupCityById(id)">Find</button>
+<input id="location-detail-id" type="text" #id placeholder="id"/>
+<button id="location-detail-btn" (click)="lookupCityById(id.value)">Find</button>
 
 <p>City:</p>
 <p id="location-detail-city">{{ city }}</p>
