@@ -6,7 +6,7 @@ describe('LocationService', () => {
   let locationSvc: LocationService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({})
+    TestBed.configureTestingModule({});
     locationSvc = TestBed.get(LocationService);
   });
 

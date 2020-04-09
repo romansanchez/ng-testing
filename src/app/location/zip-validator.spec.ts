@@ -5,7 +5,7 @@ describe('ZipValidator', () => {
 
   beforeEach(() => {
     validator = new ZipValidator();
-  })
+  });
 
   it('should create an instance', () => {
     expect(new ZipValidator()).toBeTruthy();
@@ -13,18 +13,18 @@ describe('ZipValidator', () => {
 
   describe('zip length', () => {
     it('should not allow zips with less than 5 digits', () => {
-      let zip = '333';
-      let actual = validator.isValid(zip);
+      const zip = '333';
+      const actual = validator.isValid(zip);
       expect(actual).toBe(false);
     });
     it('should allow zips with 5 digits', () => {
-      let zip = '33333';
-      let actual = validator.isValid(zip);
+      const zip = '33333';
+      const actual = validator.isValid(zip);
       expect(actual).toBe(true);
     });
     it('should not allow zips with more than 5 digits', () => {
-      let zip = '8888888';
-      let actual = validator.isValid(zip);
+      const zip = '8888888';
+      const actual = validator.isValid(zip);
       expect(actual).toBe(false);
     });
   });
