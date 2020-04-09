@@ -5,10 +5,12 @@ import { LocationService } from './location.service';
 describe('LocationService', () => {
   let locationSvc: LocationService;
 
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => {
+    TestBed.configureTestingModule({})
+    locationSvc = TestBed.get(LocationService);
+  });
 
   it('should be created', () => {
-    locationSvc = TestBed.get(LocationService);
     expect(locationSvc).toBeTruthy();
   });
 
