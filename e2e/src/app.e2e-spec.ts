@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, logging, element, by } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -8,9 +8,16 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display location detail component', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to ng-testing!');
+    expect(page.getTitleText()).toEqual('Location Detail Component');
+  });
+
+  it('should submit lookup request', () => {
+    page.navigateTo();
+    page.getIdInput().sendKeys(88888);
+    page.getIdLookupBtn().click();
+    expect(page.getCityText()).toEqual('atlanta');
   });
 
   afterEach(async () => {

@@ -6,6 +6,18 @@ export class AppPage {
   }
 
   getTitleText() {
-    return element(by.css('app-root h1')).getText() as Promise<string>;
+    return element(by.css('app-root app-location-detail h1')).getText() as Promise<string>;
+  }
+
+  getIdInput() {
+    return element(by.id('location-detail-id'));
+  }
+
+  getIdLookupBtn() {
+    return element(by.id('location-detail-btn'));
+  }
+
+  getCityText() {
+    return element(by.id('location-detail-city')).getText();
   }
 }

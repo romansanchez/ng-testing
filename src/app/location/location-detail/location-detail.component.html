@@ -1,1 +1,7 @@
-<p>location-detail works!</p>
+<h1>Location Detail Component</h1>
+<label for="id">id:</label>
+<input id="location-detail-id" type="text" [(ngModel)]="id" placeholder="id"/>
+<button id="location-detail-btn" (click)="lookupCityById(id)">Find</button>
+
+<p>City:</p>
+<p id="location-detail-city">{{ city }}</p>
