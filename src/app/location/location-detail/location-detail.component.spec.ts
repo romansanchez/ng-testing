@@ -22,35 +22,27 @@ describe('LocationDetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LocationDetailComponent);
     component = fixture.componentInstance;
-    locationSvc = TestBed.get(LocationService);
     fixture.detectChanges();
+    locationSvc = TestBed.get(LocationService);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call the location service', () => {
-    const id = '456';
-    spyOn(locationSvc, 'lookupCityById');
-
-    component.lookupCityById(id);
-
-    expect(locationSvc.lookupCityById).toHaveBeenCalled();
-    expect(locationSvc.lookupCityById).toHaveBeenCalledWith(id);
-  });
-
-  it('should get city using id', () => {
+  it('should lookup city using id', () => {
     const id = '456';
     const mockResponse = {
       city: 'denver'
     };
     spyOn(locationSvc, 'lookupCityById').and.returnValue(mockResponse);
 
-    const actual = component.lookupCityById(id);
+    component.lookupCityById(id);
 
-    expect(actual).toBeDefined();
-    expect(actual.city).toBe('denver');
+    expect(locationSvc.lookupCityById).toHaveBeenCalled();
+    expect(locationSvc.lookupCityById).toHaveBeenCalledWith(id);
+    expect(component.city).toBeDefined();
+    expect(component.city).toBe('denver');
   });
 
 });

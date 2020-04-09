@@ -8,15 +8,16 @@ import { LocationService } from '../location.service';
 })
 export class LocationDetailComponent implements OnInit {
   id = '123';
+  city = '';
 
   constructor(private locationSvc: LocationService) { }
 
   ngOnInit() {
   }
 
-
   lookupCityById(id) {
-    return this.locationSvc.lookupCityById(id);
+    const response = this.locationSvc.lookupCityById(id);
+    this.city = response.city;
   }
 
 }
